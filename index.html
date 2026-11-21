@@ -16,6 +16,8 @@ body.dark{color-scheme:dark;--ink:#e6f4e9;--soft:#b2c7b8;--bg:#0c1913;--paper:#1
 @media(max-width:395px){.logo small{display:none}.logo b{font-size:.83em}.control{padding:5px 7px}.hero h1{font-size:26px}.summary-box strong{font-size:20px}.formrow{grid-template-columns:1fr}.formrow.three{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}.card-header .name{font-size:.95em}.macro strong{font-size:16px}}
 @media print{body{background:white;color:#111;font-size:12pt}.header,.hero,.summary-strip,.tabs-wrap,.footer,.btn,.control,.star,.filterrow,.categories,.panel-heading .btn-row,.searchbar,.toast{display:none!important}.shell{width:100%}.view{display:none!important}.view.active{display:block!important}.panel{box-shadow:none;border:0;padding:8px}.layout-browse{display:block}.food-grid{display:none!important}.tablebox{display:block!important;overflow:visible}.datatable{min-width:0;font-size:9pt}.datatable td,.datatable th{padding:5px}.metric{print-color-adjust:exact}.week-grid{grid-template-columns:repeat(7,1fr)}.entry{break-inside:avoid}}
 </style>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
 </head><body>
 <header class="header"><div class="shell header-row">
  <a href="#" class="logo" id="homeLink"><span class="logo-icon">🥗</span><span><b data-ur="غذائی گائیڈ PRO" data-en="Food Nutrition PRO">غذائی گائیڈ PRO</b><small>501 FOODS · NUTRITION LIBRARY</small></span></a>
@@ -170,5 +172,12 @@ applyLanguage();refreshPickerLanguage();}
 function goalChange(){targets={calories:Number($('targetCalories').value)||2000,protein:Number($('targetProtein').value)||100};setStore('npro-goals',targets);renderTracker()}
 function browseClick(e){let star=e.target.closest('[data-star]');if(star){toggleStar(star.dataset.star);return}let b=e.target.closest('[data-food]');if(b)showFood(Number(b.dataset.food))}
 init();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(console.error);
+  });
+}
 </script>
 </body></html>
