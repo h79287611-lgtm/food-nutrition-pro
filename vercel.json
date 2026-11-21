@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/offline/Food-Nutrition-Pro.html", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/offline/Food-Nutrition-Pro.html",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment; filename=Food-Nutrition-Pro.html" }
+      ]
+    }
+  ]
+}
